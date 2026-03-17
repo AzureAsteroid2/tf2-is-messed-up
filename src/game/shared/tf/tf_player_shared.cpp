@@ -14448,7 +14448,7 @@ float CTFPlayerShared::GetKillStreakSpeedMod( void ) const
 {
 	int iKills = GetStreak( kTFStreak_KillsAll );
 	iKills = MIN( iKills, 1000 );
-	float flSpeedMod = 1.0f + (iKills * 0.58f);
+	float flSpeedMod = 1.0f + (iKills * 0.08f);
 	return flSpeedMod;
 }
 
