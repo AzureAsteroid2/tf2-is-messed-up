@@ -14282,6 +14282,10 @@ int CTFPlayer::GetMaxHealthForBuffing()
 		}
 	}
 
+	// Universal kill streak health bonus (like Eyelander)
+	int iKills = m_Shared.GetStreak( CTFPlayerShared::kTFStreak_KillsAll );
+	iMax += MIN( iKills, 1000 ) * 15;
+
 	// Some Powerup Runes increase your Max Health
 	iMax += GetRuneHealthBonus();
 

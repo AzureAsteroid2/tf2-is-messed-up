@@ -13154,6 +13154,11 @@ void CTFGameRules::DeathNotice( CBasePlayer *pVictim, const CTakeDamageInfo &inf
 					CALL_ATTRIB_HOOK_INT_ON_OTHER( pKillStreakTarget, iKillStreak, killstreak_tier );
 					// Always track killstreak regardless of the attribute for data collection purposes
 					pScorer->m_Shared.IncrementStreak( CTFPlayerShared::kTFStreak_KillsAll, 1 );
+					// Heal player for 15 HP (like Eyelander) - max health is calculated in GetMaxHealthForBuffing
+					if ( pScorer->GetHealth() < pScorer->m_Shared.GetMaxBuffedHealth() )
+					{
+						pScorer->TakeHealth( 15, DMG_IGNORE_MAXHEALTH );
+					}
 					// Update speed immediately after kill
 					pScorer->TeamFortress_SetSpeed();
 					if ( iKillStreak )

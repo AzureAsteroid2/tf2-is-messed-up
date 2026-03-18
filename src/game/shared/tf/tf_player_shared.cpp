@@ -11089,7 +11089,7 @@ void CTFPlayer::TeamFortress_SetSpeed()
 	// Set the speed
 	SetMaxSpeed( fMaxSpeed );
 	
-#ifdef GAME_DLL
+/* #ifdef GAME_DLL
 	// Debug logging for kill streak speed bonus
 	float flSpeedMod = m_Shared.GetKillStreakSpeedMod();
 	if ( flSpeedMod > 1.0f )
@@ -11099,6 +11099,7 @@ void CTFPlayer::TeamFortress_SetSpeed()
 			GetPlayerName(), iKills, flSpeedMod, fMaxSpeed );
 	}
 #endif
+*/
 
 	if ( fMaxSpeed <= 0.0f )
 	{
